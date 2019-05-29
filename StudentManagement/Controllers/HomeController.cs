@@ -24,11 +24,11 @@ namespace StudentManagement.Controllers
         }
 
         
-        public ViewResult Details()
+        public ViewResult Details(int? id)
         {
             HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
             {
-                Student = _studentRepository.GetStudent(1),
+                Student = _studentRepository.GetStudent(id??1),
                 PageTitle = "Student Details"
             };
             
