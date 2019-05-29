@@ -1,4 +1,6 @@
-﻿using StudentManagement.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using StudentManagement.Models;
+using StudentManagement.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StudentManagement.Controllers
 {
-    public class HomeController
+    public class HomeController : Controller
     {
         private readonly IStudentRepository _studentRepository;
 
@@ -15,9 +17,22 @@ namespace StudentManagement.Controllers
             _studentRepository = studentRepository;
         }
 
-        public string Index()
+        public ViewResult Index()
         {
-            return _studentRepository.GetStudent(1).Name;
+            var model = _studentRepository.GetAllStudents();
+            return View(model);
+        }
+
+        
+        public ViewResult Details()
+        {
+            HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
+            {
+                Student = _studentRepository.GetStudent(1),
+                PageTitle = "Student Details"
+            };
+            
+            return View(homeDetailsViewModel);
         }
     }
 }

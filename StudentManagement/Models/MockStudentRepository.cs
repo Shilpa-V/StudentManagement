@@ -18,6 +18,12 @@ namespace StudentManagement.Models
                 new Student(){Id = 3, Name = "Ady", Course = "MBA", Email = "ady@mycom.com"}
             };
         }
+
+        public IEnumerable<Student> GetAllStudents()
+        {
+            return _studentList;
+        }
+
         public Student GetStudent(int Id)
         {
             return _studentList.FirstOrDefault(s => s.Id == Id);
