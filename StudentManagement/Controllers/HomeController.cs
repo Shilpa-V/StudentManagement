@@ -34,5 +34,11 @@ namespace StudentManagement.Controllers
             
             return View(homeDetailsViewModel);
         }
+
+        public ViewResult Create()
+        {
+            return View();
+        }
+
     }
 }

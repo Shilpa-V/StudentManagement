@@ -13,9 +13,9 @@ namespace StudentManagement.Models
         {
             _studentList = new List<Student>()
             {
-                new Student(){Id = 1, Name = "Mary", Course = "IT", Email = "mary@mycom.com"},
-                new Student(){Id = 2, Name = "Shelly", Course = "B.Tech", Email = "shelly@mycom.com"},
-                new Student(){Id = 3, Name = "Ady", Course = "MBA", Email = "ady@mycom.com"}
+                new Student(){Id = 1, Name = "Mary", Course = Course.IT, Email = "mary@mycom.com"},
+                new Student(){Id = 2, Name = "Shelly", Course = Course.MBA, Email = "shelly@mycom.com"},
+                new Student(){Id = 3, Name = "Ady", Course = Course.MIT, Email = "ady@mycom.com"}
             };
         }
 
