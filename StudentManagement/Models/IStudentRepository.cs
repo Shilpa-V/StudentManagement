@@ -10,5 +10,7 @@ namespace StudentManagement.Models
         Student GetStudent(int Id);
         IEnumerable<Student> GetAllStudents();
         Student Add(Student student);
+        Student Update(Student studentChanges);
+        Student Delete(int id);
     }
 }
